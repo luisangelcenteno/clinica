@@ -1,0 +1,48 @@
+﻿@model IEnumerable<clinica.Models.Producto>
+@{
+    ViewData["Title"] = "Lista de Productos";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    IEnumerable<Producto> productos = ViewData["productos"] as IEnumerable<Producto>;
+}
+
+<div class="container bg-white" style="padding-top: 80px;">
+    <h2><i class="fa fa-product-hunt"></i> Mis productos</h2><br /><br />
+    <a asp-area="" asp-controller="adminproducto" asp-action="crear" class="btn btn-primary btn-sm btn-round"><i class="fa fa-plus"></i> Crear</a><br /><br />
+    <div class="row mb-5">
+        <div class="col-lg-12 mb-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Detalle</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (productos.Count() > 0)
+                    {
+                        @foreach (Producto producto in productos)
+                        {
+                        <tr>
+                            <th scope="row">@producto.Id</th>
+                            <td>@producto.Descripcion</td>
+                            <td><img src="~/img/@producto.Imagen" width="60px" height="35px" alt="Card image cap"></td>
+                            <td>@producto.Detalle</td>
+                            <td>@producto.Precio</td>
+                            <td>@producto.Stock</td>
+                            <td><a class="btn btn-info btn-round btn-sm" asp-controller="adminproducto" asp-action="editar" asp-route-id="@producto.Id"><i class="fa fa-edit"></i> Editar</a></td>
+                            <td><a class="btn btn-danger btn-round btn-sm" asp-controller="adminproducto" asp-action="eliminar" asp-route-id="@producto.Id"><i class="fa fa-trash"></i> Eliminar</a></td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

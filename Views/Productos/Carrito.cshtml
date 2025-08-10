@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewData["Title"] = "Carrito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 mt-5 mb-5">
+            <h2 class="mt-5"><i class="fa fa-shopping-cart"></i> Carrito</h2><br />
+
+            <div>
+                <h3 class="font-weight-bold">Productos seleccionados</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="card">
+                                    <img class="card-img-top" src="~/img/producto3.png" alt="Card image cap">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5 style="font-weight:bold;">Algivet</h5>
+                                        <small class="text-muted"><b class="text-danger">15</b> unidades</small>
+                                        <p style="margin: 15px 0px; color: blue; font-size: 1.3em; font-weight: bold;">S/. <b>25</b></p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" name="cantidad" autocomplete="off" value="2" min="1" max="100" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-edit"></i> Editar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="card">
+                                    <img class="card-img-top" src="~/img/producto1.png" alt="Card image cap">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5 style="font-weight:bold;">Ampicilina</h5>
+                                        <small class="text-muted"><b class="text-danger">10</b> unidades</small>
+                                        <p style="margin: 15px 0px; color: blue; font-size: 1.3em; font-weight: bold;">S/. <b>45</b></p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" name="cantidad" autocomplete="off" value="2" min="1" max="100" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-edit"></i> Editar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="card">
+                                    <img class="card-img-top" src="~/img/producto2.png" alt="Card image cap">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5 style="font-weight:bold;">Tergenvet</h5>
+                                        <small class="text-muted"><b class="text-danger">3</b> unidades</small>
+                                        <p style="margin: 15px 0px; color: blue; font-size: 1.3em; font-weight: bold;">S/. <b>25</b></p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" name="cantidad" autocomplete="off" value="1" min="1" max="100" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-edit"></i> Editar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Resumen de tu orden</h5>
+                        <hr />
+                        <p>Subtotal de productos <b class="float-right">S/. 185.00</b></p>
+                        <p>Envio <b class="float-right">S/. 15.00</b></p>
+                        <hr />
+                        <p>Total de tu compra <b class="float-right">S/. 200.00</b></p>
+                        <hr />
+                    </div>  
+                </div>
+                <div class="row bg-white pt-4 pb-4">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3 class="font-weight-bold"><i class="fa fa-credit-card"></i> Metodo de Pago</h3>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault01">N° DE TARJETA DE CREDITO</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">MES</label>
+                                            <select class="custom-select" required>
+                                                <option selected disabled>Seleccionar</option>
+                                                <option>Enero</option>
+                                                <option>Febrero</option>
+                                                <option>Marzo</option>
+                                                <option>Abril</option>
+                                                <option>Mayo</option>
+                                                <option>Junio</option>
+                                                <option>Julio</option>
+                                                <option>Agosto</option>
+                                                <option>Setiembre</option>
+                                                <option>Octubre</option>
+                                                <option>Noviembre</option>
+                                                <option>Diciembre</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="validationDefault04">AÑO</label>
+                                            <select class="custom-select" id="validationDefault04" required>
+                                                <option selected disabled>Seleccionar</option>
+                                                <option>2020</option>
+                                                <option>2021</option>
+                                                <option>2022</option>
+                                                <option>2023</option>
+                                                <option>2024</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="validationDefault05">CCV</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary btn-sm btn-round" asp-controller="productos" asp-action="venta">Pagar</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

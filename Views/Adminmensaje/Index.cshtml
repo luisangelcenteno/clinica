@@ -1,0 +1,41 @@
+﻿@model IEnumerable<clinica.Models.Contacto>
+@{
+    ViewData["Title"] = "Mis mensajes";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    IEnumerable<Contacto> mensajes = ViewData["mensajes"] as IEnumerable<Contacto>;
+}
+
+<div class="container bg-white" style="padding-top: 70px;">
+    <h2><i class="fa fa-envelope-o"></i> Mis mensajes</h2><br />
+    <div class="row mb-5">
+        <div class="col-lg-12 mb-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Mensaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (mensajes.Count() > 0)
+                    {
+                        @foreach (Contacto mensaje in mensajes)
+                        {
+                        <tr>
+                            <th scope="row">@mensaje.Id</th>
+                            <td>@mensaje.Nombre</td>
+                            <td>@mensaje.Correo</td>
+                            <td>@mensaje.Celular</td>
+                            <td>@mensaje.Mensaje</td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

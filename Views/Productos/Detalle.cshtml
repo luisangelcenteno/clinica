@@ -1,0 +1,97 @@
+﻿@model clinica.Models.Producto
+@{
+    ViewData["Title"] = "Detalle del producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    IEnumerable<Producto> productos = ViewData["productos"] as IEnumerable<Producto>;
+}
+
+<style>
+    .card-body {
+        padding: 0.8rem !important;
+    }
+</style>
+
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
+            <div class="title">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="font-weight-bold" style="margin-top: 70px;">Detalle del producto</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="col-md-5">
+                    <div class="card">
+                        <img class="card-img-top" src="~/img/@Model.Imagen" alt="Imagen del producto">
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 style="font-weight:bold;">@Model.Descripcion</h1>
+                            <small class="text-muted">Stock <b class="text-danger">@Model.Stock</b> unidades</small>
+                            <p style="margin: 15px 0px; color: blue; font-size: 1.3em; font-weight: bold;">S/. <b>@Model.Precio</b></p>
+                            <a class="btn btn-primary float-right" asp-area="" asp-controller="productos" asp-action="Carrito"><i class="fa fa-shopping-cart"></i> Añadir</a>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="info" style="padding: 0px; max-width: 100%;">
+                                <h4 class="info-title">Información</h4>
+                                <p>@Model.Informacion</p>
+                            </div>
+                            <div class="info" style="padding: 0px; max-width: 100%;">
+                                <h4 class="info-title">Detalle</h4>
+                                <p>@Model.Detalle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="font-weight-bold">Productos similares</h3>
+                    <div class="row">
+                        @if (productos.Count() > 0)
+                        {
+                            @foreach (Producto producto in productos)
+                            {
+                                if (@Model.Id != @producto.Id)
+                                {
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <img class="card-img-top" src="~/img/@producto.Imagen" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">@producto.Descripcion</h4>
+                                            <p class="card-text">
+                                                <small class="text-muted">Stock <b class="text-danger">@producto.Stock</b> unidades</small>
+                                                <b class="float-right">S/. <b>@producto.Precio</b></b>
+                                            </p>
+                                            <a class="btn btn-info btn-round" asp-controller="productos" asp-action="detalle" asp-route-id="@producto.Id">
+                                                <i class="material-icons">visibility</i> Ver
+                                            </a>
+                                            <a class="btn btn-primary float-right" asp-area="" asp-controller="productos" asp-action="Carrito"><i class="fa fa-shopping-cart"></i> Añadir</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <p>No existen productos.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

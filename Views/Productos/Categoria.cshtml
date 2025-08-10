@@ -1,0 +1,83 @@
+﻿@model IEnumerable<clinica.Models.Producto>
+@{
+    ViewData["Title"] = "Catalogo de Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    IEnumerable<Producto> productos = ViewData["productos"] as IEnumerable<Producto>;
+    IEnumerable<Categoria> categorias = ViewData["categorias"] as IEnumerable<Categoria>;
+}
+<style>
+    .card-body {
+        padding: 0.8rem !important;
+    }
+</style>
+
+<div class="page-header" style="background-image: url('https://mizooland.com/wp-content/uploads/2015/04/Productos-Completos.jpg'); ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <div class="brand">
+                    <h1 class="text-left">Nuestros productos</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main main-raised">
+    <div class="section section-basic">
+        <div class="container">
+            <div class="title">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="font-weight-bold">Catálogo</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    @foreach (Categoria categoria in categorias)
+                    {
+                        if (@categoria.Id == 1)
+                        {
+                            <a class="btn btn-info btn-sm mr-3 btn-round" asp-controller="productos" asp-action="index">@categoria.Descripcion</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-info btn-sm mr-3 btn-round" asp-controller="productos" asp-action="categoria" asp-route-id="@categoria.Id">@categoria.Descripcion</a>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <p>Todas las categorías.</p>
+            </div>
+            <div class="row">
+                @if (productos.Count() > 0)
+                {
+                    @foreach (Producto producto in productos)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="card">
+                                <img class="card-img-top" src="~/img/@producto.Imagen" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title">@producto.Descripcion</h4>
+                                    <p class="card-text">
+                                        <small class="text-muted">Stock <b class="text-danger">@producto.Stock</b> unidades</small>
+                                        <b class="float-right">S/. <b>@producto.Precio</b></b>
+                                    </p>
+                                    <a class="btn btn-info btn-round" asp-controller="productos" asp-action="detalle" asp-route-id="@producto.Id"><i class="material-icons">visibility</i> Ver</a>
+                                    <a class="btn btn-primary float-right" asp-area="" asp-controller="productos" asp-action="Carrito"><i class="fa fa-shopping-cart"></i> Añadir</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No existen productos.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
