@@ -41,4 +41,4 @@ El proyecto busca modernizar la presencia digital de la Veterinaria Zootopia, qu
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/luisangelcenteno/veterinaria-zootopia.git
+   git clone https://github.com/luisangelcenteno/clinica.git
