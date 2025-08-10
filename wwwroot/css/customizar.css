@@ -1,0 +1,187 @@
+.sidebar-dark-primary {
+	background-color: #A11009 !important;
+	color: #000000 !important;
+}
+.mivideo {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+}
+.cuadrovideo {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    max-height: 500px;
+    min-height: 380px;
+}
+.font-size-75em { font-size: 0.7em !important; }
+.usernombre { font-size: 0.8em !important; }
+.name_user { font-weight: bold; }
+.w-34 { width: 34% !important; }
+.w-33 { width: 33% !important; }
+.username_color { color: #062B70 !important; }
+.margin-25 { margin: 25px; }
+.color-red { color: #B81010 !important; }
+.color-white { color: #ffffff !important; }
+.color-green { color: #0C9823 !important; }
+.permisoUser { font-size: 0.7em; }
+.sinpadding { padding: 0px !important; }
+.txtcenter { text-align: center !important; }
+.theadpermiso { border: 1px solid black !important; }
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active { background-color: rgba(255,255,255,.1); }
+.colorthead { background-color: #A5F2F6; font-weight: bold; }
+.txtbold { font-weight: bold; }
+.modal_header_anexo2 { background-color: #b80e0e; }
+.form-control:disabled, .form-control[readonly] { background-color: #fff; }
+.fsize14 { font-size: 14px !important; }
+.mleft12 { margin-left: 12px !important; }
+.none { display: none !important; }
+.main-header .sidebar-toggle:before { content: "" !important; }
+.sidebar-menu li>a>.pull-right-container { margin-top: 1px !important; }
+.main-header .sidebar-toggle { padding: 13.5px 15px !important; }
+[class*=sidebar-dark] .brand-link { color: #ffffff !important; }
+.navbar-light .navbar-nav .nav-link { color: #ffffff !important; }
+.table th { padding: .40rem !important; }
+.table td { padding: .20rem !important; }
+.btntbl { font-size: .70rem !important; }
+
+.tablaTitulo1 {
+  font-size: 0.75em;
+  text-align: center;
+  background-color: #B22222;
+  color: #ffffff;
+  height: 30px !important;
+}
+  
+.tablaCuerpo1 {
+  font-size: 0.75em !important;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.btn_cabecera {
+	font-size: 0.75em;
+	background-color: #720405 !important;
+	border-color: #720405 !important;
+}
+
+.user-header {
+	text-align: center; background-image: url('/sileg/assets/img/bg.jpg');
+	background-repeat: repeat;
+	background-position: top left;
+	background-attachment: fixed;
+}
+
+.img_dropdown {
+	width: 35% !important;
+	height: 20% !important;
+	align-items: center;
+	padding: 2px;
+	margin: 6px;
+	background-color: #CBC8C1 !important;
+}
+
+.small_user {
+	color: #720405 !important;
+	font-weight: bold;
+}
+
+.bg-granate {
+	background-color: #B22222;
+	color: #ffffff;
+}
+
+.div-cargando {
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.title_header_informe {
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #ffffff;
+}
+
+.titulo-card {
+	font-weight: bold;
+	font-size: 1em;
+	color: #ffffff;
+}
+
+.btn-collapse {
+	padding: .15rem .5rem;
+	background-color: #a7242e;
+	color: #ffffff;
+}
+
+.bold {
+	font-weight: bold;
+	color: #000000;
+}
+
+.flex-column > .active {
+	background-color: #1981cd !important;
+	color: #fff !important;
+}
+
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('/sileg/assets/img/cargaPJ.gif') 50% 50% no-repeat rgb(149, 135, 135);
+	opacity: .5;
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 0px) {
+	label { font-weight: normal !important; }
+	form > .form-group > label { font-size: 0.8em !important; }
+	.card-body > .row > div > label {
+		font-size: 0.8em !important;
+		font-weight: normal;
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	label { font-weight: normal !important; }
+	form > .form-group > label { font-size: 0.8em !important; }
+	.card-body > .row > div > label {
+		font-size: 0.8em !important;
+		font-weight: normal;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	label { font-weight: normal !important; }
+	form > .form-group > label {
+		font-size: 0.8em !important;
+		font-weight: normal;
+
+	}
+	.card-body > .row > div > label {
+		font-size: 0.8em !important;
+		font-weight: normal;
+	}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	label { font-weight: normal; }
+	form > .form-group > label {
+		font-size: 0.8em !important;
+		font-weight: normal;
+	}
+	.card-body > .row > div > label {
+		font-size: 0.8em !important;
+	}
+}
